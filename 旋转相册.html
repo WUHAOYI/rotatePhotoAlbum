@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转相册</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #CDD1C3;
+        }
+
+        .wrap {
+            width: 300px;
+            height: 200px;
+            margin: 200px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(-16deg);
+            /* animation: identifier 10s linear infinite; */
+        }
+
+        @keyframes identifier {
+            from {
+                transform: rotateX(-16deg) rotateY(0deg);
+            }
+
+            to {
+                transform: rotateX(-16deg) rotateY(360deg);
+            }
+        }
+
+        .wrap:hover {
+            animation-play-state: paused;
+        }
+
+        .imgwrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        img {
+            filter: grayscale(0.8);
+            /*将图片转换为灰度图像*/
+            cursor: pointer;
+            /*鼠标光标会变成手指形状*/
+            transition: all .5s ease;
+            /*所有属性的变化以渐进渐出的方式在0.5秒内发生*/
+            border: 6px solid white;
+            box-shadow: 1px 1px 5px #333333;
+        }
+
+        img:hover {
+            filter: grayscale(0);
+            transform: scale(1.3, 1.3);
+        }
+
+        .imgwrap:nth-child(1) {
+            transform: rotateY(0deg) translateZ(275px);
+            /*设置图片绕旋转的角度 以及到中心轴的距离*/
+        }
+
+        .imgwrap:nth-child(2) {
+            transform: rotateY(40deg) translateZ(275px);
+        }
+
+        .imgwrap:nth-child(3) {
+            transform: rotateY(80deg) translateZ(275px);
+        }
+
+        .imgwrap:nth-child(4) {
+            transform: rotateY(120deg) translateZ(275px);
+        }
+
+        .imgwrap:nth-child(5) {
+            transform: rotateY(160deg) translateZ(275px);
+        }
+
+        .imgwrap:nth-child(6) {
+            transform: rotateY(200deg) translateZ(275px);
+        }
+
+        .imgwrap:nth-child(7) {
+            transform: rotateY(240deg) translateZ(275px);
+        }
+
+        .imgwrap:nth-child(8) {
+            transform: rotateY(280deg) translateZ(275px);
+        }
+
+        .imgwrap:nth-child(9) {
+            transform: rotateY(320deg) translateZ(275px);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+
+            button {
+                background-color: #f66f6a;
+                color: white;
+                width: 200px;
+                height: 45px;
+                border: 0;
+                font-size: 16px;
+                box-sizing: content-box;
+                border-radius: 5px;
+                margin: 0 40px 0 40px;
+            }
+
+            button:hover {
+                background-color: #a54b4a;
+            }
+
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="wrap">
+        <div class="imgwrap">
+            <img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.ZpKOJhW5FHI9Is0GXfIvSgHaLH?w=173&h=260&c=7&r=0&o=5&dpr=2&pid=1.7"
+                alt="" width="200" height="200">
+        </div>
+        <div class="imgwrap">
+            <img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.a06-4K7dHgjkbwJ-D5FVuAHaJ3?w=173&h=231&c=7&r=0&o=5&dpr=2&pid=1.7"
+                alt="" width="200" height="200">
+        </div>
+        <div class="imgwrap">
+            <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.uCoyxXwrpbuOYKycxjoB8AHaLH?w=173&h=260&c=7&r=0&o=5&dpr=2&pid=1.7"
+                alt="" width="200" height="200">
+        </div>
+        <div class="imgwrap">
+            <img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.zqCMJ11ryIiAMjHCfdhtowHaJ3?w=173&h=231&c=7&r=0&o=5&dpr=2&pid=1.7"
+                alt="" width="200" height="200">
+        </div>
+        <div class="imgwrap">
+            <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.fM3VWvdRxrkqerHkb4fTlwHaKX?w=173&h=242&c=7&r=0&o=5&dpr=2&pid=1.7"
+                alt="" width="200" height="200">
+        </div>
+        <div class="imgwrap">
+            <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.ERn3GFhjzMUdtXL8EpJ5_AHaLH?w=173&h=260&c=7&r=0&o=5&dpr=2&pid=1.7"
+                alt="" width="200" height="200">
+        </div>
+        <div class="imgwrap">
+            <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.p87RwNQIgLdYurzD7PkQXQHaK7?w=173&h=256&c=7&r=0&o=5&dpr=2&pid=1.7"
+                alt="" width="200" height="200">
+        </div>
+        <div class="imgwrap">
+            <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.x2I4AwJfUhy9hWyrHlXIpAHaNK?w=173&h=308&c=7&r=0&o=5&dpr=2&pid=1.7"
+                alt="" width="200" height="200">
+        </div>
+        <div class="imgwrap">
+            <img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.wWJxiANjukANfmv2ENgQBAHaLH?w=173&h=260&c=7&r=0&o=5&dpr=2&pid=1.7"
+                alt="" width="200" height="200">
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="start" type="button">开始动画</button>
+        <button id="stop" type="button">停止动画</button>
+    </div>
+</body>
+
+<script>
+    const wrap = document.querySelector('.wrap');
+    let isDragging = false;
+    let startX, currentAngle = 0;
+    let animationFrameId;
+
+    const rotateWrap = () => {
+        if (!isDragging) { // 只在非拖拽状态下旋转
+            currentAngle += 0.2; // 每次调用旋转0.2度
+            wrap.style.transform = `rotateX(-16deg) rotateY(${currentAngle}deg)`;
+            animationFrameId = requestAnimationFrame(rotateWrap);
+        }
+    };
+
+    // 开始动画
+    const startAnimation = () => {
+        if (!animationFrameId) {
+            requestAnimationFrame(rotateWrap);
+        }
+    };
+
+    // 停止动画
+    const stopAnimation = () => {
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        }
+    };
+
+    // 控制按钮
+    document.getElementById('start').addEventListener('click', startAnimation);
+    document.getElementById('stop').addEventListener('click', stopAnimation);
+
+    // 鼠标拖拽控制
+    document.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        startX = e.pageX;
+        stopAnimation();
+        e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+            const moveX = e.pageX - startX;
+            currentAngle += moveX * 0.2; // 根据鼠标移动距离调整角度
+            wrap.style.transform = `rotateX(-16deg) rotateY(${currentAngle}deg)`;
+            startX = e.pageX;
+        }
+    });
+
+    document.addEventListener('mouseup', function() {
+        if (isDragging) {
+            isDragging = false;
+        }
+    });
+
+    // 默认开始动画
+    startAnimation();
+</script>
+
+</html>
